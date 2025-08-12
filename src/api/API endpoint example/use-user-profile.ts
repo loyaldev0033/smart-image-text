@@ -1,4 +1,4 @@
-import { axiosGet, profileQueryKeys } from "@/api";
+import { axiosGet } from "@/api";
 import { endpoints } from "@/constants/endpoints";
 import { useQuery } from "@tanstack/react-query";
 
@@ -8,7 +8,7 @@ export function useUserProfile() {
   };
 
   return useQuery({
-    queryKey: profileQueryKeys.me(),
+    queryKey: ["me"],
     queryFn: getProfileFn,
     retry: 1,
   });

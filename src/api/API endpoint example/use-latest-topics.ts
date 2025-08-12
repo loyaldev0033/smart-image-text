@@ -1,4 +1,4 @@
-import { axiosGet, profileQueryKeys } from "@/api";
+import { axiosGet } from "@/api";
 import { endpoints } from "@/constants/endpoints";
 import { useQuery } from "@tanstack/react-query";
 
@@ -23,7 +23,7 @@ export function useLatestTopics() {
   };
 
   return useQuery({
-    queryKey: profileQueryKeys.latestTopics(),
+    queryKey: ["latestTopics"],
     queryFn: getAllProfileFn,
     retry: 1,
   });
