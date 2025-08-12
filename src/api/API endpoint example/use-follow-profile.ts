@@ -1,4 +1,4 @@
-import { axiosPut, profileQueryKeys } from "@/api";
+import { axiosPut } from "@/api";
 import { endpoints } from "@/constants/endpoints";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
@@ -10,10 +10,8 @@ export function useFollowProfile(refetch?: () => void) {
 
   return useMutation({
     mutationFn: followProfileFn,
-    onSuccess: (_, variables) => {
-      queryClient.refetchQueries({
-        queryKey: profileQueryKeys.detail(variables),
-      });
+    onSuccess: (_data, variables) => {
+      // queryClient.refetchQueries({ queryKey: profileQueryKeys.detail(variables) });
       refetch?.();
     },
     retry: 1,
