@@ -1,10 +1,7 @@
-import EditorSection from "@/sections/Editor";
-import { Metadata } from "next";
+import dynamic from 'next/dynamic'
 
-export default function EditorPage() {
-  return <EditorSection />;
+const Editor = dynamic(() => import('@/components/Editor').then(m => m.Editor), { ssr: false })
+
+export default function Page() {
+  return <Editor />
 }
-
-export const metadata: Metadata = {
-  title: "Image Text Composer",
-};
