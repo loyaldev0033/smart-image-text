@@ -1,10 +1,10 @@
+import EditorSection from "@/sections/Editor";
 import { Metadata } from "next";
-import HomeSection from "@/sections/home";
 
-export default function Home() {
-  return <HomeSection />;
+export default function EditorPage() {
+  return <EditorSection />;
 }
 
 export const metadata: Metadata = {
-  title: "Home | NextJS, ShadCN",
+  title: "Image Text Composer",
 };

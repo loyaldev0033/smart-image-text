@@ -1,8 +1,7 @@
-import AppProvider from "@/lib/provider";
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { ViewTransitions } from "@/lib/view-transition/transition-context";
+import { ViewTransitions } from "@/components/view-transition";
 
 export const metadata: Metadata = {
   title: "NextJS, TailWind, ShadCN Template",
@@ -12,31 +11,6 @@ export const metadata: Metadata = {
     { rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
     { rel: "manifest", url: "/manifest.json" },
   ],
-  // For shared on Linkedin
-  // openGraph: {
-  //   url: "https://ui.shadcn.com/",
-  //   type: "website",
-  //   title: "NextJS, TailWind, ShadCN Template",
-  //   description:
-  //     "This NextJS, TailWind, ShadCN Template.",
-  //   images: [
-  //     {
-  //       url: "https://opengraph.b-cdn.net/production/images/5f7de2ad-757c-4b5a-93df-e4710673ed92.png?token=icuAfsR9-MOAJY7LhwYLK25_qqRfozZ4PJh8hXq44PE&height=581&width=1200&expires=33280702307",
-  //       width: 1200,
-  //       height: 581,
-  //       alt: "RedFlag Networks Open Graph Image",
-  //     },
-  //   ],
-  // },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "RedFlag Networks | Flagging Workplace Culture & Crypto",
-  //   description:
-  //     "RedFlag Networks flags workplace toxicity, celebrates positive behavior, and explores workplace culture through crypto. Join our beta to redefine transparency and accountability.",
-  //   images: [
-  //     "https://opengraph.b-cdn.net/production/images/5f7de2ad-757c-4b5a-93df-e4710673ed92.png?token=icuAfsR9-MOAJY7LhwYLK25_qqRfozZ4PJh8hXq44PE&height=581&width=1200&expires=33280702307",
-  //   ],
-  // },
 };
 
 //Sets the browser toolbar color for mobile devices (theme-color meta tag).
@@ -82,7 +56,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <AppProvider>{children}</AppProvider>
+            {children}
           </ThemeProvider>
         </body>
       </html>
