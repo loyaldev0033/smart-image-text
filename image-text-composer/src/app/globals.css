@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --editor-bg: 248 250 252; /* slate-50 */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
